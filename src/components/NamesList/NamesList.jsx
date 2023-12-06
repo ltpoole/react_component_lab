@@ -1,10 +1,16 @@
-const NamesList = ({}) => {
+import NameBadge from "../NameBadge/NameBadge";
+
+const NamesList = ({ names }) => {
   return (
     <div>
-      <h3>Vickie</h3>
-      <h3>Charity</h3>
-      <h3>Aiden</h3>
-      <h3>Aubrey</h3>
+      <h2>Names List</h2>
+      {names.map((name, index) => (
+        <NameBadge
+          key={index}
+          firstName={name.firstName}
+          lastName={name.lastName}
+        />
+      ))}
     </div>
   );
 };
